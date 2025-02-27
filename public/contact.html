@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - BankSift</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Firebase SDK -->
+  <script defer src="/__/firebase/9.17.1/firebase-app-compat.js"></script>
+  <script defer src="/__/firebase/9.17.1/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/9.17.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/9.17.1/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+
+<body class="h-full">
+  <header>
+    <div class="min-h-full">
+      <div class="bg-indigo-600 pb-32">
+        <nav class="border-b border-indigo-300 border-opacity-25 bg-indigo-600 lg:border-none">
+          <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+            <div
+              class="relative flex h-16 items-center justify-between lg:border-b lg:border-indigo-400 lg:border-opacity-25">
+              <div class="flex items-center px-2 lg:px-0">
+                <div class="flex-shrink-0">
+                  <a href="/">
+                    <span class="text-white font-bold text-xl tracking-tight">
+                      <span class="bg-indigo-500 px-2 py-1 rounded-md">Bank</span><span
+                        class="text-indigo-300">Sift</span>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="hidden lg:ml-10 lg:block">
+                  <div class="flex space-x-4">
+                    <a href="/"
+                      class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75">
+                      Home
+                    </a>
+                    <a href="/contact.html" class="rounded-md bg-indigo-700 px-3 py-2 text-sm font-medium text-white"
+                      aria-current="page">
+                      Contact
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+              <a href="/"
+                class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75">
+                Home
+              </a>
+              <a href="/contact.html" class="block rounded-md bg-indigo-700 px-3 py-2 text-base font-medium text-white"
+                aria-current="page">
+                Contact
+              </a>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="-mt-32">
+    <div class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <div class="rounded-lg bg-white px-5 py-6 shadow sm:px-6">
+        <!-- Contact Section -->
+        <section class="bg-white">
+          <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+            <div class="text-center">
+              <h1 class="text-4xl font-bold leading-tight text-indigo-600 sm:text-5xl lg:text-6xl">
+                Contact Us
+              </h1>
+              <p class="mt-4 text-lg text-gray-500 sm:text-xl lg:text-2xl">
+                Have questions about BankSift? We're here to help!
+              </p>
+            </div>
+
+            <div class="mt-12 flex flex-col items-center">
+              <div class="w-full max-w-lg rounded-xl bg-indigo-50 p-8 shadow-lg">
+                <div class="flex flex-col items-center text-center">
+                  <svg class="h-16 w-16 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                    </path>
+                  </svg>
+
+                  <h2 class="mt-4 text-2xl font-bold text-gray-900">Email Us</h2>
+                  <p class="mt-2 text-gray-600">
+                    For customer support, inquiries, or feedback, please reach out to:
+                  </p>
+
+                  <a href="mailto:JD@Bank-Sift.com"
+                    class="mt-4 inline-flex items-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    JD@BankSift.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-indigo-600">
+    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-white">
+        <!-- Footer Left Section -->
+        <div class="flex space-x-4 mb-4 md:mb-0">
+          <a href="/" class="hover:underline">Home</a>
+          <a href="/contact.html" class="hover:underline">Contact</a>
+        </div>
+        <!-- Footer Right Section -->
+        <div class="text-center md:text-right">
+          <p>&copy; 2025 BankSift. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Firebase
+      try {
+        let app = firebase.app();
+        console.log('Firebase SDK initialized successfully');
+      } catch (e) {
+        console.error('Error initializing Firebase SDK:', e);
+      }
+
+      // User menu toggle
+      const userMenuButton = document.getElementById('user-menu-button');
+      const userMenu = document.getElementById('userMenu');
+
+      if (userMenuButton && userMenu) {
+        userMenuButton.addEventListener('click', () => {
+          userMenu.classList.toggle('hidden');
+        });
+      }
+
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileUserMenu = document.getElementById('mobileUserMenu');
+
+      if (mobileMenuButton && mobileUserMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileUserMenu.classList.toggle('hidden');
+        });
+      }
+
+      // Email copy functionality
+      const emailLink = document.querySelector('a[href^="mailto:"]');
+      if (emailLink) {
+        emailLink.addEventListener('click', (e) => {
+          console.log('Email link clicked');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
